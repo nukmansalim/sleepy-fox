@@ -8,9 +8,14 @@ function Article() {
                 <p class="title">
                     Info hero
                 </p>
-                <p class="subtitle">
+                <div class="subtitle">
                     Info subtitle
-                </p>
+                    <br />
+                </div>
+                <div>
+                    <span className='
+                    ml-2 button is-small is-rounded is-info'>Technology</span>
+                </div>
             </div>
         </section>
     )
