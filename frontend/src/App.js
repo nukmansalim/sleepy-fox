@@ -1,12 +1,15 @@
-import TheNavbar from "./components/TheNavbar";
-import TheHero from "./components/TheHero";
-import ArticleList from "./components/ArticleList";
+import LandingPage from "./pages/LandingPage";
+import { Routes, Route } from "react-router-dom";
+import AddArticle from "./pages/AddArticlePage";
 function App() {
   return (
     <div>
-      <TheNavbar />
-      <TheHero />
-      <ArticleList />
+      <Routes>
+        <Route index element={<LandingPage />} />
+        <Route path="/article">
+          <Route path="add" element={<AddArticle />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

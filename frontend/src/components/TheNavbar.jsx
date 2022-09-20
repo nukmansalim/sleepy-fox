@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 function TheNavbar() {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -49,12 +50,14 @@ function TheNavbar() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-info">
-                                <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light">
+                            <Link to='/article/add'>
+                                <button className="button is-info">
+                                    <strong>Publish your Article</strong>
+                                </button>
+                            </Link>
+                            {/* <a className="button is-light">
                                 Log in
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>
