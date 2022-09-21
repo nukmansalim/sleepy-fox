@@ -27,8 +27,9 @@ function ArticleList() {
                 return (
                     <>
                         <Article key={i}
-                            title={item.description}
-                            description="hello this is on client-side" />
+                            title={item.title}
+                            description={item.description}
+                        />
                     </>
                 )
             })}

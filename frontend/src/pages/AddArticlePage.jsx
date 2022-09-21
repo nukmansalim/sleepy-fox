@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from "axios"
 
 function AddArticle() {
     const [Title, setTitle] = useState("")
@@ -8,6 +9,16 @@ function AddArticle() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        axios.post('http://localhost:8080/posts', {
+            title: Title,
+            description: Body
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div className="container box p-6

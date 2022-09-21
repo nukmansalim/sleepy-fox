@@ -9,7 +9,7 @@ function Article(props) {
                 <p class="title">
                     {props.title}
                 </p>
-                <div class="subtitle">
+                <div style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} class="subtitle">
                     {props.description}
                     <br />
                 </div>
