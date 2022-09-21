@@ -1,20 +1,19 @@
 import React from 'react'
 
-function Article() {
+function Article(props) {
+
     return (
 
         <section class="hero is-warning m-3">
             <div class="hero-body">
                 <p class="title">
-                    Info hero
+                    {props.title}
                 </p>
                 <div class="subtitle">
-                    Info subtitle
+                    {props.description}
                     <br />
                 </div>
                 <div>
-                    <span className='
-                    ml-2 button is-small is-rounded is-info'>Technology</span>
                 </div>
             </div>
         </section>

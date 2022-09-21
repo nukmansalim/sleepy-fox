@@ -29,14 +29,14 @@ function TheNavbar() {
                 <div className='navbar-end'>
                     <div className='navbar-item'>
                         <Link>
-                            <button href='/' className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                            <a href='/' className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
                                 Login
-                            </button>
+                            </a>
                         </Link>
                         <Link to='/article/add'>
-                            <button className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
+                            <a className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
                                 Publish your article
-                            </button>
+                            </a>
                         </Link>
                     </div>
                 </div>
