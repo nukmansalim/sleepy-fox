@@ -1,9 +1,7 @@
 import React from 'react'
-
 function Article(props) {
 
     return (
-
         <section class="hero is-warning m-3">
             <div class="hero-body">
                 <p class="title">

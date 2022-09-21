@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Article from './Article'
+import { Link } from 'react-router-dom'
+
 import axios from 'axios'
 function ArticleList() {
     const [Post, setPost] = useState([]);
@@ -18,6 +20,7 @@ function ArticleList() {
         }
     };
 
+
     useEffect(() => {
         getPost();
     }, []);
@@ -26,10 +29,12 @@ function ArticleList() {
             {Post.map((item, i) => {
                 return (
                     <>
-                        <Article key={i}
-                            title={item.title}
-                            description={item.description}
-                        />
+                        <Link to={`/article/${item._id}`}>
+                            <Article key={i}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        </Link>
                     </>
                 )
             })}

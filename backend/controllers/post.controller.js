@@ -8,7 +8,7 @@ const getAllPosts = async (req, res) => {
         const Posts = await Post.find()
         res.status(200).json(Posts)
     } catch (error) {
-        res.status(500).json(error)
+        console.log(error)
     }
 
 }
@@ -16,8 +16,9 @@ const getAllPosts = async (req, res) => {
 const getPost = async (req, res) => {
 
     try {
-        const { id } = req.params.id
-        const post = await Post.findOne(id)
+        const id = req.params.id
+        const post = await Post.findById(id)
+
         res.status(200).json(post)
     } catch (error) {
         res.status(500).json(error)
