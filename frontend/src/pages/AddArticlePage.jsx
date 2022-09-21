@@ -5,11 +5,6 @@ function AddArticle() {
     const [Tags, setTags] = useState([])
     const [createTags, setCreateTags] = useState("")
 
-    // const handleTags = (e) => {
-    //     e.preventDefault()
-    //     setTags(createTags)
-    // }
-
     const addTags = () => {
         Tags.push(createTags)
         setCreateTags('')
@@ -32,8 +27,6 @@ function AddArticle() {
                         <input className="input" type="text" />
                     </div>
                 </div>
-
-
                 <div className="field">
                     <label className="label">
                         Something Else
@@ -44,7 +37,6 @@ function AddArticle() {
                         ></textarea>
                     </div>
                 </div>
-
                 <div className="field">
                     <label className="label">Article Tags</label>
                     <div className="control">
@@ -66,14 +58,8 @@ function AddArticle() {
                             onClick={addTags}
                             type='submit'
                             className='mt-3 button is-info'>Add Tags</button>
-
                     </div>
                 </div>
-
-
-
-
-
                 <div className="field is-grouped">
                     <div className="control">
                         <button className="button is-success">
