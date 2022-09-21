@@ -14,16 +14,12 @@ function TheNavbar() {
                     />
                 </a>
 
-                <a
-                    onClick={() => {
-                        setisActive(!isActive)
-                    }}
+                <a onClick={() => { setisActive(!isActive) }}
                     role='button'
                     className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
                     aria-label='menu'
                     aria-expanded='false'
-                    data-target='navbarBasicExample'
-                >
+                    data-target='navbarBasicExample'>
                     <span aria-hidden='true'></span>
                     <span aria-hidden='true'></span>
                     <span aria-hidden='true'></span>
@@ -32,12 +28,16 @@ function TheNavbar() {
             <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                 <div className='navbar-end'>
                     <div className='navbar-item'>
-                        <a href='/' className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
-                            Login
-                        </a>
-                        <a href='/' className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
-                            Publish your article
-                        </a>
+                        <Link>
+                            <button href='/' className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                                Login
+                            </button>
+                        </Link>
+                        <Link to='/article/add'>
+                            <button className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
+                                Publish your article
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
