@@ -27,30 +27,30 @@ const UserRegister = async (req, res) => {
 }
 
 const UserLogin = async (req, res) => {
-    const { username, password, email } = req.body
-
     const user = await User.findOne({
-        username: username,
-        email: email
+        username: req.body.username,
+        email: req.body.email,
     })
     if (user) {
-
-        const isCorrect = bcrypt.compare(password, user.password)
-        if (isCorrect) {
-            const Token = jwt.sign({
+        const validUser = bcrypt.compareSync(req.body.password, user.password)
+        if (!validUser) {
+            res.json({ err: "Error" })
+        } else {
+            const token = jwt.sign({ id: user._id }, process.env.JWT_STRING, {
+                expiresIn: 86400
+            })
+            res.json({
+                auth: true,
+                token: token,
                 username: user.username,
-                password: user.password,
                 email: user.email
-            }, process.env.JWT_STRING)
-            return res.json(Token)
+            })
         }
-
-
-
-        // }else{
-        //     res.json({ message: "Login Failed" })
-        // }
     }
+    else {
+        res.json({ msg: "user not found" })
+    }
+
 }
 
 module.exports = { UserRegister, UserLogin }
