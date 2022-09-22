@@ -18,8 +18,18 @@ function ArticleDetails() {
 
     return (
         <>
-            <h1>{Post.title}</h1>
-            <h1>{Post.description}</h1>
+            <div className='container'>
+                <div style={{ border: '1px solid', boxShadow: '5px 10px' }}
+                    className='title is-1 box is-active'>
+                    <h1>{Post.title}</h1>
+                </div>
+                <div
+                    style={{ border: '1px solid', boxShadow: '3px' }}
+                    className='box is-size-4 mt-2 is-active'>
+
+                    <h1>{Post.description}</h1>
+                </div>
+            </div>
         </>
     )
 }
