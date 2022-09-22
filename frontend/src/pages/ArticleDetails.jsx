@@ -24,7 +24,7 @@ function ArticleDetails() {
                     <h1>{Post.title}</h1>
                 </div>
                 <div
-                    style={{ border: '1px solid', boxShadow: '3px' }}
+                    style={{ border: '1px solid', boxShadow: '3px 3px' }}
                     className='box is-size-4 mt-2 is-active'>
 
                     <h1>{Post.description}</h1>
