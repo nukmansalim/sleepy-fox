@@ -14,8 +14,7 @@ function TheNavbar() {
                     />
                 </a>
 
-                <a onClick={() => { setisActive(!isActive) }}
-                    role='button'
+                <button onClick={() => { setisActive(!isActive) }}
                     className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
                     aria-label='menu'
                     aria-expanded='false'
@@ -23,20 +22,20 @@ function TheNavbar() {
                     <span aria-hidden='true'></span>
                     <span aria-hidden='true'></span>
                     <span aria-hidden='true'></span>
-                </a>
+                </button>
             </div>
             <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                 <div className='navbar-end'>
                     <div className='navbar-item'>
                         <Link to="/login">
-                            <a className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                            <button className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
                                 Login
-                            </a>
+                            </button>
                         </Link>
                         <Link to='/article/add'>
-                            <a className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
+                            <button className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
                                 Publish your article
-                            </a>
+                            </button>
                         </Link>
                     </div>
                 </div>
