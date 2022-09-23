@@ -25,9 +25,9 @@ export const useLogin = () => {
             setError(response.data.message)
         }
         if (response.data.auth) {
-            console.log(response.data.token)
             window.localStorage.setItem("auth", response.data.token)
         }
+
     }
 
     return { login, error, isLoading }

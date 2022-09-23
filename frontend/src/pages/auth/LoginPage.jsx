@@ -1,6 +1,8 @@
 import { useLogin } from '../../hooks/UseLogin'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 function LoginPage() {
 
     const [username, setUsername] = useState('')
@@ -8,6 +10,15 @@ function LoginPage() {
     const [email, setEmail] = useState('')
 
     const { login, error, isLoading } = useLogin()
+
+
+    const navigate = useNavigate()
+
+    const token = window.localStorage.getItem("auth")
+    if (token) {
+        console.log(token)
+        navigate("/")
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
