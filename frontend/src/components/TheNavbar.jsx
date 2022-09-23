@@ -28,8 +28,8 @@ function TheNavbar() {
             <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                 <div className='navbar-end'>
                     <div className='navbar-item'>
-                        <Link>
-                            <a href='/' className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                        <Link to="/login">
+                            <a className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
                                 Login
                             </a>
                         </Link>
