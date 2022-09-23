@@ -46,7 +46,7 @@ function RegisterPage() {
                                         placeholder="Email" />
                                 </div >
                             </div >
-                            {error && <div className='notification is-danger is-light is-size-8 p-3 '>
+                            {error && <div className='notification is-danger is-light is-size-8 p-2 '>
                                 {error}
                             </div>
                             }

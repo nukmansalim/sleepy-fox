@@ -48,11 +48,12 @@ function LoginPage() {
                                         placeholder="Email" />
                                 </div>
                             </div>
+                            {error && <div className='notification is-danger is-light is-size-8 p-2 '>
+                                {error}
+                            </div>
+                            }
                             <button disabled={isLoading} className='button is-info'>Login</button>
                         </form>
-                        {error && <div className='is-error'>
-                            {error}
-                        </div>}
                         <p className='mt-3'>Doesn't Have Account? <Link to='/signup'> Click Here to Signup </Link>
                         </p>
                     </div>

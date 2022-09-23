@@ -34,7 +34,7 @@ const UserLogin = async (req, res) => {
     if (user) {
         const validUser = bcrypt.compareSync(req.body.password, user.password)
         if (!validUser) {
-            res.json({ err: "Error" })
+            res.json({ message: "Invalid user data, please try again" })
         } else {
             const token = jwt.sign({ id: user._id }, process.env.JWT_STRING, {
                 expiresIn: 86400
@@ -48,7 +48,7 @@ const UserLogin = async (req, res) => {
         }
     }
     else {
-        res.json({ msg: "user not found" })
+        res.json({ message: "User not found" })
     }
 
 }
