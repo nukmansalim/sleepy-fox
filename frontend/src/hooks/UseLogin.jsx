@@ -17,12 +17,16 @@ export const useLogin = () => {
             headers: { "Content-Type": "application/json" }
         })
         if (response) {
-            console.log(response)
+            setError(null)
             setIsLoading(false)
         }
         if (!response.ok) {
             setIsLoading(false)
             setError(response.data.message)
+        }
+        if (response.data.auth) {
+            console.log(response.data.token)
+            window.localStorage.setItem("auth", response.data.token)
         }
     }
 
