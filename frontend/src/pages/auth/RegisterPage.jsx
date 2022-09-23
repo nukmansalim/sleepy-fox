@@ -46,14 +46,15 @@ function RegisterPage() {
                                         placeholder="Email" />
                                 </div >
                             </div >
+                            {error && <div className='notification is-danger is-light is-size-8 p-3 '>
+                                {error}
+                            </div>
+                            }
                             <button
                                 className='button is-info'
                                 disabled={isLoading}>Register</button>
                         </form >
-                        {error && <div className='is-error'>
-                            {error}
-                        </div>
-                        }
+
                         <p className='mt-3'>Already Have Account? <Link to='/login'> Click Here to Signin </Link>
                         </p>
                     </div >

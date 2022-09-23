@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export const UseLogin = () => {
+export const useLogin = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const login = async (username, email, password) => {

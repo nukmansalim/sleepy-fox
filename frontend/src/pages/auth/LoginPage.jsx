@@ -1,5 +1,4 @@
-import React from 'react'
-import { UseLogin } from '../../hooks/UseLogin'
+import { useLogin } from '../../hooks/UseLogin'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 function LoginPage() {
@@ -8,7 +7,7 @@ function LoginPage() {
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
 
-    const { login, error, isLoading } = UseLogin()
+    const { login, error, isLoading } = useLogin()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
