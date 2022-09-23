@@ -1,7 +1,11 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import FormControl from '../../components/FormControl'
 function LoginPage() {
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
     return (
         <div className="hero is-fullheight">
             <div className='hero-body'>

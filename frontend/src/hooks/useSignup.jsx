@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-function useSignup() {
+export const useSignup = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
 
@@ -9,7 +9,7 @@ function useSignup() {
         setIsLoading(true)
         setError(null)
 
-        const response = await axios.post('http://localhost:8080/auth/login',
+        const response = await axios.post('http://localhost:8080/auth/register',
             JSON.stringify(
                 {
                     username,
@@ -17,19 +17,15 @@ function useSignup() {
                     password
                 }),
             { headers: { 'Content-Type': "application/json" } })
-        const json = await response.json()
-
+        if (response) {
+            console.log(response)
+            setIsLoading(false)
+            setError(response.error)
+        }
         if (!response.ok) {
             setIsLoading(false)
-            setError(json.error)
-        }
-        if (response.ok) {
-            console.log(json.data)
-            setIsLoading(false)
-            setError(null)
+            setError(response.data.message)
         }
     }
     return { signup, isLoading, error }
 }
-
-export default useSignup
