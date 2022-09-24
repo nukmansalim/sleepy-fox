@@ -12,7 +12,7 @@ const {
 router.get("/", getAllPosts)
 router.post("/", createPost)
 
-router.get("/:userId", getPostbyAuthor)
+router.get("/user/:userId", getPostbyAuthor)
 router.patch("/update/:id", updatePost)
 router.delete("/delete/:id", deletePost)
 

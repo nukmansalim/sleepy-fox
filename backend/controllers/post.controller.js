@@ -18,7 +18,7 @@ const getPost = async (req, res) => {
 
     try {
         const id = req.params.id
-        const post = await Post.findById(id)
+        const post = await Post.findById(id).populate("author", "username")
 
         res.status(200).json(post)
     } catch (error) {

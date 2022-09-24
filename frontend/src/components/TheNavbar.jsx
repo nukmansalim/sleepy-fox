@@ -33,24 +33,23 @@ function TheNavbar({ user }) {
                 <div className='navbar-end'>
                     <div className='navbar-item'>
                         {!user &&
-                            <Link to="/login">
-                                <a className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
-                                    Login
-                                </a>
+                            <Link to="/login" className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+
+                                Login
                             </Link>
                         }
                         {user &&
-                            <a
+                            <p
                                 onClick={handleLogout}
                                 className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
                                 Logout
-                            </a>
+                            </p>
                         }
                         {user &&
-                            <Link to='/article/add'>
-                                <a className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
-                                    Publish your article
-                                </a>
+                            <Link className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`} to='/article/add'>
+
+                                Publish your article
+
                             </Link>}
                     </div>
                 </div>
