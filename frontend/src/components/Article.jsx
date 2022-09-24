@@ -1,6 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
+import { BsHandThumbsUp } from 'react-icons/bs'
 function Article(props) {
-
     return (
         <section
             style={{
@@ -20,6 +21,7 @@ function Article(props) {
                 </div>
                 <div>
                 </div>
+                <BsHandThumbsUp />
             </div>
         </section >
     )

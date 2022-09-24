@@ -3,6 +3,7 @@ const router = express.Router()
 const {
     getAllPosts,
     getPost,
+    getPostbyAuthor,
     createPost,
     updatePost,
     deletePost
@@ -10,6 +11,8 @@ const {
 
 router.get("/", getAllPosts)
 router.post("/", createPost)
+
+router.get("/:userId", getPostbyAuthor)
 router.patch("/update/:id", updatePost)
 router.delete("/delete/:id", deletePost)
 

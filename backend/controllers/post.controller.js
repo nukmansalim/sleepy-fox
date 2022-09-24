@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const User = require('../models/user.model')
 const Post = require('../models/post.model')
 
 const getAllPosts = async (req, res) => {
@@ -27,15 +28,21 @@ const getPost = async (req, res) => {
 
 }
 
+const getPostbyAuthor = async (req, res) => {
+    const foundPost = await Post.find({ author: req.params.userId }).populate("author", "username")
+
+    await res.json(foundPost)
+}
+
 const createPost = async (req, res) => {
 
     try {
-        const { title, description, tags } = req.body
+        const { title, description, author } = req.body
 
         const post = await Post.create({
             title: title,
             description: description,
-            tags: tags,
+            author: author,
         })
 
         res.json(post)
@@ -73,4 +80,6 @@ const deletePost = async (req, res) => {
     }
 }
 
-module.exports = { getAllPosts, getPost, createPost, updatePost, deletePost }
+module.exports = {
+    getPostbyAuthor, getAllPosts, getPost, createPost, updatePost, deletePost
+}

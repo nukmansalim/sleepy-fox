@@ -5,7 +5,7 @@ import LoginPage from "./pages/auth/LoginPage";
 import ArticleDetails from "./pages/ArticleDetails";
 import RegisterPage from "./pages/auth/RegisterPage";
 function App() {
-  const token = localStorage.getItem("auth")
+
 
   return (
     <div>

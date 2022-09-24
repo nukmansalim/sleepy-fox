@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
+const Post = require('../models/post.model')
 const User = require('../models/user.model')
 const jwt = require('jsonwebtoken')
 
@@ -63,5 +64,7 @@ const getMe = async (req, res) => {
         }
     }
 }
+
+
 
 module.exports = { UserRegister, UserLogin, getMe }
