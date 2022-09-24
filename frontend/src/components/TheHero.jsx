@@ -8,7 +8,6 @@ function TheHero() {
                     Write Article that you want!
                 </p>
                 <p className="subtitle">
-                    Large
                 </p>
             </div>
         </section>

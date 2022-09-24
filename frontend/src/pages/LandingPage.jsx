@@ -1,6 +1,6 @@
 import React from 'react'
 import TheNavbar from '../components/TheNavbar'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TheHero from ".././components/TheHero"
 import axios from "axios"
 import ArticleList from '../components/ArticleList'
@@ -8,19 +8,17 @@ function LandingPage() {
     const [UserData, setUserData] = useState(null)
     const token = localStorage.getItem("auth")
 
-    if (token) {
-        const getUserData = async () => {
-            const response = await axios.post("http://localhost:8080/auth/getme",
+    useEffect(() => {
+        if (token) {
+            axios.post("http://localhost:8080/auth/getme",
                 {
                     auth: token
                 }
-            )
-            if (response) {
-                setUserData(response.data.UserData)
-            }
+            ).then(response => setUserData(response.data.UserData))
         }
-        getUserData()
-    }
+    }, [])
+
+
 
 
 
