@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLogout } from '../hooks/useLogout'
 function TheNavbar({ user }) {
     const [isActive, setisActive] = useState(false)
+    // const { logout } = useLogout("auth")
+
+    const handleLogout = () => {
+        localStorage.removeItem("auth")
+        window.location.reload()
+    }
     return (
         <nav className='navbar' role='navigation' aria-label='main navigation'>
             <div className='navbar-brand'>
@@ -29,16 +36,23 @@ function TheNavbar({ user }) {
                     <div className='navbar-item'>
                         {!user &&
                             <Link to="/login">
-                                <p className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                                <a className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
                                     Login
-                                </p>
+                                </a>
                             </Link>
                         }
                         {user &&
+                            <a
+                                onClick={handleLogout}
+                                className={` ${isActive ? 'navbar-item' : 'button is-info mr-1'}`}>
+                                Logout
+                            </a>
+                        }
+                        {user &&
                             <Link to='/article/add'>
-                                <p className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
+                                <a className={` ${isActive ? 'navbar-item' : 'button is-info ml-1'}`}>
                                     Publish your article
-                                </p>
+                                </a>
                             </Link>}
                     </div>
                 </div>
