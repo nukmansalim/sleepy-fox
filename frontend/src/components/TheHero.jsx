@@ -2,12 +2,12 @@ import React from 'react'
 
 function TheHero() {
     return (
-        <section class="hero is-large is-info">
-            <div class="hero-body">
-                <p class="title">
+        <section className="hero is-large is-info">
+            <div className="hero-body">
+                <p className="title">
                     Write Article that you want!
                 </p>
-                <p class="subtitle">
+                <p className="subtitle">
                     Large
                 </p>
             </div>

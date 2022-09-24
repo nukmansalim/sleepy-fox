@@ -53,4 +53,15 @@ const UserLogin = async (req, res) => {
 
 }
 
-module.exports = { UserRegister, UserLogin }
+const getMe = async (req, res) => {
+    const token = await req.body.auth
+    if (token) {
+        const userId = jwt.verify(token, process.env.JWT_STRING)
+        if (userId) {
+            const UserData = await User.findOne({ _id: userId.id })
+            res.json({ UserData: UserData })
+        }
+    }
+}
+
+module.exports = { UserRegister, UserLogin, getMe }

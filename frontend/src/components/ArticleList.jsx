@@ -28,14 +28,14 @@ function ArticleList() {
         <div>
             {Post.map((item, i) => {
                 return (
-                    <>
+                    <div key={item._id}>
                         <Link to={`/article/${item._id}`}>
-                            <Article key={i}
+                            <Article
                                 title={item.title}
                                 description={item.description}
                             />
                         </Link>
-                    </>
+                    </div>
                 )
             })}
 

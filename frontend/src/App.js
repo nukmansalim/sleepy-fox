@@ -2,6 +2,7 @@ import LandingPage from "./pages/LandingPage";
 import { Routes, Route } from "react-router-dom";
 import AddArticle from "./pages/AddArticlePage";
 import LoginPage from "./pages/auth/LoginPage";
+
 import ArticleDetails from "./pages/ArticleDetails";
 import RegisterPage from "./pages/auth/RegisterPage";
 function App() {
