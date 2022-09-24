@@ -16,7 +16,6 @@ function LoginPage() {
 
     const token = window.localStorage.getItem("auth")
     if (token) {
-        console.log(token)
         navigate("/")
     }
 

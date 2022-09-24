@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useLogout } from '../hooks/useLogout'
 function TheNavbar({ user }) {
     const [isActive, setisActive] = useState(false)
-    // const { logout } = useLogout("auth")
 
     const handleLogout = () => {
         localStorage.removeItem("auth")

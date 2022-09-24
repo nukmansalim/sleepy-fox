@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from "axios"
-
+import { useToken } from '../hooks/useToken'
+import { useNavigate } from 'react-router-dom'
 function AddArticle() {
     const [Title, setTitle] = useState("")
     const [Body, setBody] = useState("")
-
+    const navigate = useNavigate()
+    const isAuth = useToken("auth")
+    if (isAuth) {
+        navigate("/login")
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
