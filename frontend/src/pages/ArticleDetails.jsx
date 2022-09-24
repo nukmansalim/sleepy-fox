@@ -20,8 +20,9 @@ function ArticleDetails() {
         <>
             <div className='container'>
                 <div style={{ border: '1px solid', boxShadow: '5px 10px' }}
-                    className='title is-1 box is-active'>
-                    <h1>{Post.title}</h1>
+                    className='box is-active'>
+                    <h1 className='title is-1 '>{Post.title}</h1>
+                    <h6>{Post.author.username}</h6>
                 </div>
                 <div
                     style={{ border: '1px solid', boxShadow: '3px 3px' }}
